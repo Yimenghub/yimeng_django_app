@@ -13,7 +13,7 @@
 
             # Install any needed packages specified in requirements.txt
           RUN pip install --no-cache-dir -r requirements.txt && \
-			  pip install gunicorn
+			        pip install gunicorn
 
 
           # Copy the current directory contents into the container at / app /
@@ -23,4 +23,4 @@
           EXPOSE 8000
 
           # Run gunicorn when the container launches
-            CMD ["gunicorn", "--bind", "0.0.0.0:8000", "${my_site}.wsgi:application"]
+            CMD ["gunicorn", "--bind", "0.0.0.0:8000", "my_site.wsgi:application"]
